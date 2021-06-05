@@ -34,11 +34,11 @@ function injectDynamicCssToChild() {
 }
 
 function injectDynamicCssToParent() {
-    var parentCssHead = document.head || document.getElementsByTagName('head')[0],
+    var parentCssHead = document.head || document.getElementsByTagName('head')[0];
     var parentStyles = document.createElement('style');
     parentStyles.type = 'text/css';
 
-    var parentCssStyles = '#ymFrameHolder { width: 440px; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 100%; }}';
+    var parentCssStyles = '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 440px; }}';
     if (parentStyles.styleSheet) {
       parentStyles.styleSheet.cssText = css;
     } else {
