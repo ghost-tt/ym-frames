@@ -14,6 +14,7 @@
 
 
 function injectDynamicCss() {
+    alert("1");
     document.getElementById("ymFrameHolder").style.width = "440px";
 
     var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];  
