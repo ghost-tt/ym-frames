@@ -14,8 +14,11 @@
 
 
 function injectDynamicCss() {
-    if(!checkIfMobile()) {
+    var isMobile = checkIfMobile();
+    if(!isMobile) {
         document.getElementById("ymFrameHolder").style.width = "440px";
+    } {
+        document.getElementById("ymFrameHolder").style.width = "100%";
     }
 
     var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];  
