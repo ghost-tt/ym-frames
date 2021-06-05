@@ -14,7 +14,7 @@
 
 
 function injectDynamicCssToChild() {
-    var isMobile = checkIfMobile();
+//     var isMobile = checkIfMobile();
 //     if(!isMobile) {
 //         document.getElementById("ymFrameHolder").style.width = "440px";
 //     } {
