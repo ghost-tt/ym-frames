@@ -1,17 +1,5 @@
 (function addFrames () {
   try {    
-    var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];  
-    var modularStyles = document.createElement('style');
-    modularStyles.type = 'text/css';
-    
-    var css = '#chatBoxMainContainer.message-icons.live-chat { margin: 3rem 0 0 3rem; }';
-    if (modularStyles.styleSheet){
-      modularStyles.styleSheet.cssText = css;
-    } else {
-      modularStyles.appendChild(document.createTextNode(css));
-    }
-    ymFrameHead.appendChild(modularStyles);
-    
     document.querySelector('#chatContainer').insertAdjacentHTML(
       'afterbegin',
       `<div>
