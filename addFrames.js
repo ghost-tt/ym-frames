@@ -1,4 +1,5 @@
 (function addFrames () {
+  document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem";
   document.querySelector('#chatContainer').insertAdjacentHTML(
     'afterbegin',
     `<div>
