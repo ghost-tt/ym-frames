@@ -14,7 +14,9 @@
 
 
 function injectDynamicCss() {
-    document.getElementById("ymFrameHolder").style.width = "440px";
+    if(!checkIfMobile()) {
+        document.getElementById("ymFrameHolder").style.width = "440px";
+    }
 
     var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];  
     var modularStyles = document.createElement('style');
@@ -27,4 +29,8 @@ function injectDynamicCss() {
       modularStyles.appendChild(document.createTextNode(css));
     }
     ymFrameHead.appendChild(modularStyles);
+}
+
+function checkIfMobile() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
 }
