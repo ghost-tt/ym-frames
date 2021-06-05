@@ -1,5 +1,6 @@
 (function injectJS() {
     try {
+      document.getElementById("ymFrameHolder").style.width = "440px";
       var iFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];         
       var modularBars = document.createElement('script');
       modularBars.type = 'text/javascript';
