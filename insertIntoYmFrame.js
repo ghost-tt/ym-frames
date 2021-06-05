@@ -40,11 +40,11 @@ function injectDynamicCssToParent() {
 
     var parentCssStyles = '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 440px; }}';
     if (parentStyles.styleSheet) {
-      parentStyles.styleSheet.cssText = css;
+      parentStyles.styleSheet.cssText = parentCssStyles;
     } else {
-      parentStyles.appendChild(document.createTextNode(css));
+      parentStyles.appendChild(document.createTextNode(parentCssStyles));
     }
-    parentCssHead.appendChild(style);
+    parentCssHead.appendChild(parentStyles);
 }
 
 // function checkIfMobile() {
