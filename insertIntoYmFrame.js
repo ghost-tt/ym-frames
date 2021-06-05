@@ -5,7 +5,7 @@
         modularBars.type = 'text/javascript';
         modularBars.src = 'https://ghost-tt.github.io/ym-frames/addFrames.js';
         iFrameHead.appendChild(modularBars);
-        injectDynamicCssToParent();
+//         injectDynamicCssToParent();
         injectDynamicCssToChild();
     } catch(e) {
         console.error("failed while inserting to iFrame", e);
