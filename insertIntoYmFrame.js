@@ -5,7 +5,7 @@
         modularBars.type = 'text/javascript';
         modularBars.src = 'https://ghost-tt.github.io/ym-frames/addFrames.js';
         iFrameHead.appendChild(modularBars);
-//         injectDynamicCssToParent();
+        injectDynamicCssToParent();
         injectDynamicCssToChild();
     } catch(e) {
         console.error("failed while inserting to iFrame", e);
@@ -14,12 +14,6 @@
 
 
 function injectDynamicCssToChild() {
-//     var isMobile = checkIfMobile();
-//     if(!isMobile) {
-//         document.getElementById("ymFrameHolder").style.width = "440px";
-//     } {
-//         document.getElementById("ymFrameHolder").style.width = "100%";
-//     }
     var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];  
     var modularStyles = document.createElement('style');
     modularStyles.type = 'text/css';
@@ -46,7 +40,3 @@ function injectDynamicCssToParent() {
     }
     parentCssHead.appendChild(parentStyles);
 }
-
-// function checkIfMobile() {
-//     return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 ) );
-// }
