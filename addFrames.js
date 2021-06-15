@@ -7,6 +7,12 @@
 //             innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px)`);
 //         }; 
 //         document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem"; 
+        
+        window.onresize = function (event) {
+            var innerFrameHeight = document.getElementById("chatBoxMainContainer");
+            innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px) !important;`);
+        };
+
         document.querySelector('#chatContainer').insertAdjacentHTML('afterbegin', `
             <div class="mod-head-side-bar-container">
                 <div class="overflow-container-sidebar">
