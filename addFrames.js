@@ -5,6 +5,7 @@
 	 console.log("frameHeight---> ", frameHeight);
 	 var heightValue = frameHeight - 95 - 70 - 0;
 	 console.log("frameHeight---> ", frameHeight);
+	  console.log("========== doc ===========", document.getElementById("chatBoxMainContainer"));
 	 document.getElementById("chatBoxMainContainer").style.height = heightValue;
 	 console.log("finish---> "); 
   };
