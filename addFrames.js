@@ -1,14 +1,12 @@
 (function addFrames() {
     try {
-        window.onresize = function (event) {
-            console.log("window.innerHeight ---> ", window.innerHeight);
-            var innerFrameHeight = document.getElementById("chatBoxMainContainer");
-            console.log(innerFrameHeight);
-            setTimeout(() => {
-                innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px)`);
-            }, 500)
-        }; 
-        document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem"; 
+//         window.onresize = function (event) {
+//             console.log("window.innerHeight ---> ", window.innerHeight);
+//             var innerFrameHeight = document.getElementById("chatBoxMainContainer");
+//             console.log(innerFrameHeight);
+//             innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px)`);
+//         }; 
+//         document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem"; 
         document.querySelector('#chatContainer').insertAdjacentHTML('afterbegin', `
             <div class="mod-head-side-bar-container">
                 <div class="overflow-container-sidebar">
