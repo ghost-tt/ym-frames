@@ -11,6 +11,7 @@
         window.onresize = function (event) {
             var innerFrameHeight = document.getElementById("chatBoxMainContainer");
             innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px) !important;`);
+            console.log("innerFrameHeight");
         };
 
         document.querySelector('#chatContainer').insertAdjacentHTML('afterbegin', `
