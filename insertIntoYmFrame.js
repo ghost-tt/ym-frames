@@ -20,9 +20,11 @@ function injectDynamicCssToChild() {
     var frameHeight = ""
     window.onresize = function(event) {
 	 console.log("height---> ", top.innerHeight);
-	 frameHeight = top.innerHeight + "px";
+	 frameHeight = top.innerHeight;
 	 console.log("frameHeight---> ", frameHeight);
-	 document.getElementById("chatBoxMainContainer").style.height = calc(frameHeight - 95px - 3rem - 0px);
+	 var heightValue = frameHeight - 95 - 70 - 0;
+	 console.log("frameHeight---> ", frameHeight);
+	 document.getElementById("chatBoxMainContainer").style.height = calc(heightValue);
 	 console.log("finish---> "); 
     };
     
