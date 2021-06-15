@@ -9,8 +9,10 @@
 //         document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem"; 
         
         window.onresize = function (event) {
-            var innerFrameHeight = document.getElementById("chatBoxMainContainer");
-            innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px) !important;`);
+//             var innerFrameHeight = document.getElementById("chatBoxMainContainer");
+//             innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 0px) !important;`);
+            var frameHeight = window.innerHeight - 95 - 48;
+            document.getElementById("chatBoxMainContainer").style.height = `${frameHeight}px`;
             console.log("innerFrameHeight ==> ", innerFrameHeight);
         };
 
