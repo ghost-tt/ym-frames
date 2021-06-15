@@ -8,7 +8,7 @@
         
         window.onresize = function (event) {
             console.log("window.innerHeight ---> ", window.innerHeight);
-            var innerFrameHeight = document.getElementById("chatBoxMainContainer").style.height = heightValue;
+            var innerFrameHeight = document.getElementById("chatBoxMainContainer");
             innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 15px)`);
         }; 
         document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem"; 
