@@ -5,7 +5,7 @@
 	 console.log("frameHeight---> ", frameHeight);
 	 var heightValue = frameHeight - 95 - 70 - 0;
 	 console.log("frameHeight---> ", frameHeight);
-	 document.getElementById("chatBoxMainContainer").style.height = calc(heightValue);
+	 document.getElementById("chatBoxMainContainer").style.height = heightValue;
 	 console.log("finish---> "); 
   };
   document.getElementById("chatBoxMainContainer").style.margin = "5rem 0 0 3rem"; 
