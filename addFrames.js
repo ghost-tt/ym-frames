@@ -5,6 +5,12 @@
 //             var heightValue = frameHeight - 95 - 70 - 0; 
 //             document.getElementById("chatBoxMainContainer").style.height = heightValue;
 //         }; 
+        
+        window.onresize = function (event) {
+            console.log("window.innerHeight ---> ", window.innerHeight);
+            var innerFrameHeight = document.getElementById("chatBoxMainContainer").style.height = heightValue;
+            innerFrameHeight.style.setProperty('height', `calc(${window.innerHeight} - 95px - 3rem - 15px)`);
+        }; 
         document.getElementById("chatBoxMainContainer").style.margin = "3rem 0 0 3rem"; 
         document.querySelector('#chatContainer').insertAdjacentHTML('afterbegin', `
             <div class="mod-head-side-bar-container">
