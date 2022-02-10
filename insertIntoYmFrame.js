@@ -143,7 +143,7 @@ window.addEventListener(
           console.log("splittedContainerHeight --> ", splittedContainerHeight);
 
 
-          chatContainer.style.height = splittedValue - splittedContainerHeight;
+          chatContainer.style.height = splittedContainerHeight - 75;
 
           console.log("chatContainer  222 2 22 2 ", chatContainer.style.height, "px");
 
