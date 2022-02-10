@@ -153,19 +153,18 @@ window.addEventListener(
           console.log("temp ----> ", temp);
 
           try {
-            var parentCssHead = document.head || document.getElementsByTagName("head")[0];
-            var parentStyles = document.createElement("style");
-            parentStyles.type = "text/css";
+            var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];
+            var modularStyles = document.createElement("style");
+            modularStyles.type = "text/css";
 
-            var parentCssStyles = `#chatBoxMainContainer { height: ${heightDiff}px !important }`;
-            if (parentStyles.styleSheet) {
-              parentStyles.styleSheet.cssText = parentCssStyles;
+            var css = `#chatBoxMainContainer { height: ${heightDiff}px !important }`;
+
+            if (modularStyles.styleSheet) {
+              modularStyles.styleSheet.cssText = css;
             } else {
-              parentStyles.appendChild(
-                document.createTextNode(parentCssStyles)
-              );
+              modularStyles.appendChild(document.createTextNode(css));
             }
-            parentCssHead.appendChild(parentStyles);
+            ymFrameHead.appendChild(modularStyles);
           } catch (e) {
             console.error("failed while inserting to iFrame", e);
           }
