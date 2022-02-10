@@ -54,3 +54,7 @@ document.getElementById("e10").onclick = function () {
 document.getElementById("e11").onclick = function () {
   parent.postMessage("MINIMIZE", "*");
 };
+
+document.getElementById("ymDivCircle").onclick = function () {
+  parent.postMessage("OPEN", "*");
+};
