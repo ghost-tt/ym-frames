@@ -124,7 +124,14 @@ window.addEventListener(
         if(openedState?.event_code == "ym-bot-opened") {
           console.log("testing ");
           var iframe = document.getElementById('ymIframe');
-          var innerDoc = iframe.contentWindow.document.getElementsByTagName("div");
+          var innerDoc = iframe;
+
+          var promo = iframe.contentDocument.body.getElementsByClassName("promo-carousel")[0].offsetHeight;
+          console.log("promo --> ", promo);
+
+          var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"].offsetHeight
+          console.log("chatContainer --> ", chatContainer);
+
           console.log("innerDoc --> ", innerDoc)
           var temp = innerDoc.body;
           console.log("temp ----> ", temp);
