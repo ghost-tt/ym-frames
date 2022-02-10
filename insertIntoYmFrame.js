@@ -131,9 +131,9 @@ window.addEventListener(
 
           var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"];
           console.log("chatContainer --> ", chatContainer.style.height);
-          chatContainer.style.height = chatContainer.offsetHeight - 75;
+          chatContainer.style.height = chatContainer.style.height - 75;
 
-          console.log("chatContainer  222 2 22 2 ", chatContainer.style.height);
+          console.log("chatContainer  222 2 22 2 ", chatContainer.style.height, "px");
 
           console.log("innerDoc --> ", innerDoc)
           var temp = innerDoc.body;
