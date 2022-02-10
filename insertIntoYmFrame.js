@@ -52,7 +52,7 @@ window.addEventListener(
     console.log("onload---->");
 //     console.log(eventData);
     try {
-//       console.error("Data----------------->>>", eventData.data);
+      console.error("Data----------------->>>", eventData.data);
 
       if (eventData.data == "CLOSE") {
         window.YellowMessengerPlugin.closeBot();
