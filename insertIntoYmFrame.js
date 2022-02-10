@@ -142,14 +142,33 @@ window.addEventListener(
           var splittedContainerHeight = Number(splittedValue);
           console.log("splittedContainerHeight --> ", splittedContainerHeight);
 
+          var heightDiff = splittedContainerHeight - 75;
 
-          chatContainer.style.height = splittedContainerHeight - 75;
+          chatContainer.style.height = `${heightDiff}px`;
 
           console.log("chatContainer  222 2 22 2 ", chatContainer.style.height, "px");
 
           console.log("innerDoc --> ", innerDoc)
           var temp = innerDoc.body;
           console.log("temp ----> ", temp);
+
+          try {
+            var parentCssHead = document.head || document.getElementsByTagName("head")[0];
+            var parentStyles = document.createElement("style");
+            parentStyles.type = "text/css";
+
+            var parentCssStyles = `#chatBoxMainContainer { height: ${heightDiff}px !important }`;
+            if (parentStyles.styleSheet) {
+              parentStyles.styleSheet.cssText = parentCssStyles;
+            } else {
+              parentStyles.appendChild(
+                document.createTextNode(parentCssStyles)
+              );
+            }
+            parentCssHead.appendChild(parentStyles);
+          } catch (e) {
+            console.error("failed while inserting to iFrame", e);
+          }
         }
       }
 
