@@ -119,7 +119,7 @@ window.addEventListener(
         if(openedState?.event_code == "ym-bot-opened") {
           console.log("testing ");
           var iframe = document.getElementById('ymIframe');
-          var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          var innerDoc = iframe.contentDocument;
           console.log(innerDoc)
           var temp = innerDoc.getElementsByClassName("promo-carousel")[0];
           console.log("temp ----> ", temp);
