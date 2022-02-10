@@ -58,8 +58,13 @@ window.addEventListener(
         var openedState = JSON.parse(eventData.data);
         console.log("opened state --> ", openedState);
         
-        if(openedState == "ym-bot-opened") {
+        if(openedState?.event_code == "ym-bot-opened") {
           console.log("testing ");
+          var promoHeight = document.getElementsByClassName("promo-carousel")[0].offsetHeight;
+          if(promoHeight) {
+            frameHeight = frameHeight - promoHeight;
+          }
+          console.log("frameHeight --> ", frameHeight);
         }
       }
 
