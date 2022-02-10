@@ -118,7 +118,9 @@ window.addEventListener(
         
         if(openedState?.event_code == "ym-bot-opened") {
           console.log("testing ");
-          var temp = document.body;
+          var iframe = document.getElementById('ymIframe');
+          var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+          var temp = innerDoc;
           console.log("temp ----> ", temp);
         }
       }
