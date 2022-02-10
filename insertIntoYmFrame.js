@@ -132,9 +132,18 @@ window.addEventListener(
           var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"];
           console.log("chatContainer --> ", chatContainer.style.height);
           var chatContainerHeight = chatContainer.style.height;
-          var splittedContainerHeight = Number(chatContainerHeight.split("px")[0]);
+          console.log("chatContainerHeight --> ", chatContainerHeight);
 
-          chatContainer.style.height = chatContainer.style.height - splittedContainerHeight;
+
+          var splittedValue = chatContainerHeight.split("px")[0];
+          console.log("splittedValue --> ", splittedValue);
+
+          
+          var splittedContainerHeight = Number(splittedValue);
+          console.log("splittedContainerHeight --> ", splittedContainerHeight);
+
+
+          chatContainer.style.height = splittedValue - splittedContainerHeight;
 
           console.log("chatContainer  222 2 22 2 ", chatContainer.style.height, "px");
 
