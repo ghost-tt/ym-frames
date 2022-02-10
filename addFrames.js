@@ -1,8 +1,5 @@
 (function addFrames() {
   try {
-    document.getElementById('close-promotion').onclick = function() {
-       console.log("button was clicked");
-    };
     window.onresize = function (event) {
       var frameHeight = window.innerHeight - 104 - 48;
       var promoHeight = document.getElementsByClassName("promo-carousel")[0].offsetHeight;
