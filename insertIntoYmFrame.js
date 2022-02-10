@@ -46,6 +46,11 @@ function injectDynamicCssToParent() {
   parentCssHead.appendChild(parentStyles);
 }
 
+function getElementWithinIframe() {
+    console.log("getElementWithinIframe --->");
+    return document.getElementById('chatBoxMainContainer');
+}
+
 window.addEventListener(
   "message",
   function (eventData) {
@@ -121,7 +126,7 @@ window.addEventListener(
           var iframe = document.getElementById('ymIframe');
           var innerDoc = iframe.contentDocument;
           console.log(innerDoc)
-          var temp = innerDoc.getElementsByClassName("promo-carousel")[0];
+          var temp = innerDoc.contentWindow.functionNameToCall();
           console.log("temp ----> ", temp);
         }
       }
