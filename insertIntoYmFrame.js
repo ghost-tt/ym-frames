@@ -129,12 +129,8 @@ window.addEventListener(
           var promo = iframe.contentDocument.body.getElementsByClassName("promo-carousel")[0].offsetHeight;
           console.log("promo --> ", promo);
 
-          var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"]
+          var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"].offsetHeight
           console.log("chatContainer --> ", chatContainer);
-
-          chatContainer.style.height = chatContainer.offsetHeight - 75;
-
-          console.log("chatContainer  222 2 22 2 ", chatContainer);
 
           console.log("innerDoc --> ", innerDoc)
           var temp = innerDoc.body;
