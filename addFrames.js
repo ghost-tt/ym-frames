@@ -39,10 +39,6 @@
   }
 })();
 
-document.getElementById("ymDivCircle").onclick = function() {
-   console.log("ashish was clicked");
-};
-
 function dynamicHeaderTitle(e) {
   e.preventDefault();
   var title = e.srcElement.getAttribute("title");
