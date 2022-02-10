@@ -50,9 +50,9 @@ window.addEventListener(
   "message",
   function (eventData) {
     console.log("onload---->");
-    console.log(eventData);
+//     console.log(eventData);
     try {
-      console.error("Data----------------->>>", eventData.data);
+//       console.error("Data----------------->>>", eventData.data);
 
       if (eventData.data == "CLOSE") {
         window.YellowMessengerPlugin.closeBot();
