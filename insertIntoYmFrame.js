@@ -53,10 +53,6 @@ window.addEventListener(
     console.log(eventData);
     try {
       console.error("Data----------------->>>", eventData.data);
-      
-      document.getElementById("close-promotion").onclick = function() {
-         console.log("button was clicked");
-      };
 
       if (eventData.data == "CLOSE") {
         window.YellowMessengerPlugin.closeBot();
