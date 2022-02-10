@@ -46,9 +46,24 @@ function injectDynamicCssToParent() {
   parentCssHead.appendChild(parentStyles);
 }
 
-function getElementWithinIframe() {
-    console.log("getElementWithinIframe --->");
-    return document.getElementById('chatBoxMainContainer');
+function updateIframeHeight(heightDiff) {
+  console.log("getElementWithinIframe --->", heightDiff);
+  try {
+    var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];
+    var modularStyles = document.createElement("style");
+    modularStyles.type = "text/css";
+
+    var css = `#chatBoxMainContainer { height: ${heightDiff}px !important }`;
+
+    if (modularStyles.styleSheet) {
+      modularStyles.styleSheet.cssText = css;
+    } else {
+      modularStyles.appendChild(document.createTextNode(css));
+    }
+    ymFrameHead.appendChild(modularStyles);
+  } catch (e) {
+    console.error("failed while inserting to iFrame", e);
+  }
 }
 
 window.addEventListener(
@@ -152,22 +167,16 @@ window.addEventListener(
           var temp = innerDoc.body;
           console.log("temp ----> ", temp);
 
-          try {
-            var ymFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];
-            var modularStyles = document.createElement("style");
-            modularStyles.type = "text/css";
+          updateIframeHeight(heightDiff);
 
-            var css = `#chatBoxMainContainer { height: ${heightDiff}px !important }`;
+          var promoCloseBtn = iframe.contentDocument.body.getElementsByClassName("promo-carousel-close-button")["close-promotion"];
+          console.log("promoCloseBtn ----> ", promoCloseBtn);
 
-            if (modularStyles.styleSheet) {
-              modularStyles.styleSheet.cssText = css;
-            } else {
-              modularStyles.appendChild(document.createTextNode(css));
-            }
-            ymFrameHead.appendChild(modularStyles);
-          } catch (e) {
-            console.error("failed while inserting to iFrame", e);
-          }
+          console.log("splittedContainerHeight ----> ", splittedContainerHeight);
+          var updatedHeight = splittedContainerHeight + 75;
+          
+          console.log("updatedHeight ----> ", updatedHeight);
+          promoCloseBtn.onclick = updateIframeHeight(updatedHeight);
         }
       }
 
