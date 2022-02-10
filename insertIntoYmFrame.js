@@ -52,23 +52,7 @@ window.addEventListener(
     console.log("onload---->");
 //     console.log(eventData);
     try {
-      console.error("Data----------------->>>", eventData.data);
-      
-      if(event) {
-        var openedState = JSON.parse(eventData.data);
-        console.log("opened state --> ", openedState);
-        
-        if(openedState?.event_code == "ym-bot-opened") {
-          console.log("testing ");
-          setTimeout(function(){
-            var promoHeight = document.getElementsByClassName("promo-carousel")[0].offsetHeight;
-            if(promoHeight) {
-              frameHeight = frameHeight - promoHeight;
-            }
-            console.log("frameHeight --> ", frameHeight);
-          }, 500);
-        }
-      }
+      console.log("Data----------------->>>", eventData.data);
 
       if (eventData.data == "CLOSE") {
         window.YellowMessengerPlugin.closeBot();
@@ -124,6 +108,19 @@ window.addEventListener(
             console.error("failed while inserting to iFrame", e);
           }
         })();
+      }
+      
+      
+      
+      if(event) {
+        var openedState = JSON.parse(eventData.data);
+        console.log("opened state --> ", openedState);
+        
+        if(openedState?.event_code == "ym-bot-opened") {
+          console.log("testing ");
+          var temp = document.body;
+          console.log("temp ----> ", temp);
+        }
       }
 
       // if(eventData.data == 'MINIMIZE') {
