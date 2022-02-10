@@ -130,10 +130,10 @@ window.addEventListener(
           // console.log("promo --> ", promo);
 
           var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"];
-          console.log("chatContainer --> ", chatContainer);
+          console.log("chatContainer --> ", chatContainer.style.height);
           chatContainer.style.height = chatContainer.offsetHeight - 75;
 
-          console.log("chatContainer  222 2 22 2 ", chatContainer);
+          console.log("chatContainer  222 2 22 2 ", chatContainer.style.height);
 
           console.log("innerDoc --> ", innerDoc)
           var temp = innerDoc.body;
