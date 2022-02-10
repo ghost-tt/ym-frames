@@ -53,6 +53,15 @@ window.addEventListener(
 //     console.log(eventData);
     try {
       console.error("Data----------------->>>", eventData.data);
+      
+      if(event) {
+        var openedState = JSON.parse(eventData.data);
+        console.log("opened state --> ", openedState);
+        
+        if(openedState == "ym-bot-opened") {
+          console.log("testing ");
+        }
+      }
 
       if (eventData.data == "CLOSE") {
         window.YellowMessengerPlugin.closeBot();
