@@ -2,11 +2,6 @@
   try {
     window.onresize = function (event) {
       var frameHeight = window.innerHeight - 104 - 48;
-      var promoHeight = document.getElementsByClassName("promo-carousel")[0].offsetHeight;
-      if(promoHeight) {
-        frameHeight = frameHeight - promoHeight;
-      }
-      console.log("frameHeight --> ", frameHeight);
       document.getElementById(
         "chatBoxMainContainer"
       ).style.height = `${frameHeight}px`;
