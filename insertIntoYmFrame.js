@@ -57,6 +57,10 @@ window.addEventListener(
       if (eventData.data == "CLOSE") {
         window.YellowMessengerPlugin.closeBot();
       }
+      
+      if (eventData.data == "OPEN") {
+        console.log("***********OPEN************");
+      }
 
       if (eventData.data == "Maxamize") {
         (function injectJS() {
