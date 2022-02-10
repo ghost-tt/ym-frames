@@ -126,7 +126,7 @@ window.addEventListener(
           var iframe = document.getElementById('ymIframe');
           var innerDoc = iframe.contentDocument;
           console.log(innerDoc)
-          var temp = innerDoc.contentWindow.functionNameToCall();
+          var temp = innerDoc.functionNameToCall();
           console.log("temp ----> ", temp);
         }
       }
