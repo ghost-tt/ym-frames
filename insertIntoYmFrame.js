@@ -60,11 +60,13 @@ window.addEventListener(
         
         if(openedState?.event_code == "ym-bot-opened") {
           console.log("testing ");
-          var promoHeight = document.getElementsByClassName("promo-carousel")[0].offsetHeight;
-          if(promoHeight) {
-            frameHeight = frameHeight - promoHeight;
-          }
-          console.log("frameHeight --> ", frameHeight);
+          setTimeout(function(){
+            var promoHeight = document.getElementsByClassName("promo-carousel")[0].offsetHeight;
+            if(promoHeight) {
+              frameHeight = frameHeight - promoHeight;
+            }
+            console.log("frameHeight --> ", frameHeight);
+          }, 500);
         }
       }
 
