@@ -160,7 +160,7 @@ window.addEventListener(
 
           var ignoreClickOnElement = chatContainer;
 
-          document.addEventListener('click', function(event) {
+          iframe.contentDocument.body.addEventListener('click', function(event) {
               var isClickInsideElement = ignoreClickOnElement.contains(event.target);
               if (!isClickInsideElement) {
                 var chatContainerHeight = chatContainer.getBoundingClientRect().height;
