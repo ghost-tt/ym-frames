@@ -36,7 +36,7 @@ function injectDynamicCssToParent() {
   parentStyles.type = "text/css";
 
   var parentCssStyles =
-    '#ymFrameHolder { width: 100%; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 440px; } #fadeshow { display: none;} }';
+    '#ymFrameHolder { width: 100%; left: unset !important; } @media only screen and (min-width: 768px) { #ymFrameHolder { width: 440px; } #fadeshow { display: none;} }';
     
   if (parentStyles.styleSheet) {
     parentStyles.styleSheet.cssText = parentCssStyles;
@@ -65,6 +65,7 @@ function updateIframeHeight(heightDiff) {
     console.error("failed while inserting to iFrame", e);
   }
 }
+
 
 window.addEventListener(
   "message",
@@ -137,15 +138,28 @@ window.addEventListener(
         console.log("opened state --> ", openedState);
         
         if(openedState?.event_code == "ym-bot-opened") {
-          console.log("testing ");
-          var iframe = document.getElementById('ymIframe');
-          var innerDoc = iframe;
+          // console.log("testing ");
+          // var iframe = document.getElementById('ymIframe');
+          // var innerDoc = iframe;
 
-          // var promo = iframe.contentDocument.body.getElementsByClassName("promo-carousel")[0].offsetHeight;
-          // console.log("promo --> ", promo);
+          // // var promo = iframe.contentDocument.body.getElementsByClassName("promo-carousel")[0].offsetHeight;
+          // // console.log("promo --> ", promo);
 
-          var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"];
-          console.log("chatContainer --> ", chatContainer.style.height);
+          // var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"];
+          // console.log("chatContainer --> ", chatContainer.style.height);
+
+          // var secondChatContainerHeight = chatContainer.getBoundingClientRect().height;
+          // console.log("chatContainerHeight --> ", secondChatContainerHeight);
+          // console.log("ashish sharma")
+
+          // var heightDiff = secondChatContainerHeight - 75;
+          // console.log("heightDiff --> ", heightDiff);
+
+          // chatContainer.style.height = `${heightDiff}px`;
+
+
+
+
           // var chatContainerHeight = chatContainer.style.height;
           // var chatContainerHeight = chatContainer.offsetHeight;
           // console.log("chatContainerHeight --> ", chatContainerHeight);
@@ -158,33 +172,33 @@ window.addEventListener(
           var splittedContainerHeight = Number(splittedValue);
           console.log("splittedContainerHeight --> ", splittedContainerHeight); */
 
-          var ignoreClickOnElement = chatContainer;
-          var count = 0;
-          iframe.contentDocument.body.addEventListener('click', function(event) {
-              count++;
-              if(count > 1) {
-                // var isClickInsideElement = ignoreClickOnElement.contains(event.target);
-                // if (!isClickInsideElement) {
-                  var chatContainerHeight = chatContainer.getBoundingClientRect().height;
-                  console.log("chatContainerHeight --> ", chatContainerHeight);
-                  console.log("ashish sharma")
+          // var ignoreClickOnElement = chatContainer;
+          // var count = 0;
+          // iframe.contentDocument.body.addEventListener('click', function(event) {
+          //     count++;
+          //     if(count < 1) {
+          //       // var isClickInsideElement = ignoreClickOnElement.contains(event.target);
+          //       // if (!isClickInsideElement) {
+          //         var chatContainerHeight = chatContainer.getBoundingClientRect().height;
+          //         console.log("chatContainerHeight --> ", chatContainerHeight);
+          //         console.log("ashish sharma")
 
-                  var heightDiff = chatContainerHeight - 75;
-                  console.log("heightDiff --> ", heightDiff);
+          //         var heightDiff = chatContainerHeight - 75;
+          //         console.log("heightDiff --> ", heightDiff);
 
-                  chatContainer.style.height = `${heightDiff}px`;
+          //         chatContainer.style.height = `${heightDiff}px`;
 
-                  console.log("chatContainer  testing purpose ", chatContainer.style.height, "px");
+          //         console.log("chatContainer  testing purpose ", chatContainer.style.height, "px");
 
-                  console.log("innerDoc --> ", innerDoc)
-                  var temp = innerDoc.body;
-                  console.log("temp ----> ", temp);
+          //         console.log("innerDoc --> ", innerDoc)
+          //         var temp = innerDoc.body;
+          //         console.log("temp ----> ", temp);
 
-                  updateIframeHeight(heightDiff);
-                    //Do something click is outside specified element
-                // }
-              }
-          });
+          //         updateIframeHeight(heightDiff);
+          //           //Do something click is outside specified element
+          //       // }
+          //     }
+          // });
 
           
 
