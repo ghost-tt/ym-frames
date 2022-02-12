@@ -167,7 +167,7 @@ window.addEventListener(
                 console.log("chatContainerHeight --> ", chatContainerHeight);
                 console.log("ashish sharma")
 
-                var heightDiff = splittedContainerHeight - 54;
+                var heightDiff = chatContainerHeight - 54;
                 console.log("heightDiff --> ", heightDiff);
 
                 chatContainer.style.height = `${heightDiff}px`;
