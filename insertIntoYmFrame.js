@@ -159,27 +159,30 @@ window.addEventListener(
           console.log("splittedContainerHeight --> ", splittedContainerHeight); */
 
           var ignoreClickOnElement = chatContainer;
-
+          var count = 0;
           iframe.contentDocument.body.addEventListener('click', function(event) {
-              var isClickInsideElement = ignoreClickOnElement.contains(event.target);
-              if (!isClickInsideElement) {
-                var chatContainerHeight = chatContainer.getBoundingClientRect().height;
-                console.log("chatContainerHeight --> ", chatContainerHeight);
-                console.log("ashish sharma")
+              count++;
+              if(count > 1) {
+                // var isClickInsideElement = ignoreClickOnElement.contains(event.target);
+                // if (!isClickInsideElement) {
+                  var chatContainerHeight = chatContainer.getBoundingClientRect().height;
+                  console.log("chatContainerHeight --> ", chatContainerHeight);
+                  console.log("ashish sharma")
 
-                var heightDiff = chatContainerHeight - 75;
-                console.log("heightDiff --> ", heightDiff);
+                  var heightDiff = chatContainerHeight - 75;
+                  console.log("heightDiff --> ", heightDiff);
 
-                chatContainer.style.height = `${heightDiff}px`;
+                  chatContainer.style.height = `${heightDiff}px`;
 
-                console.log("chatContainer  testing purpose ", chatContainer.style.height, "px");
+                  console.log("chatContainer  testing purpose ", chatContainer.style.height, "px");
 
-                console.log("innerDoc --> ", innerDoc)
-                var temp = innerDoc.body;
-                console.log("temp ----> ", temp);
+                  console.log("innerDoc --> ", innerDoc)
+                  var temp = innerDoc.body;
+                  console.log("temp ----> ", temp);
 
-                updateIframeHeight(heightDiff);
-                  //Do something click is outside specified element
+                  updateIframeHeight(heightDiff);
+                    //Do something click is outside specified element
+                // }
               }
           });
 
