@@ -146,37 +146,53 @@ window.addEventListener(
 
           var chatContainer = iframe.contentDocument.body.getElementsByClassName("live-chat")["chatBoxMainContainer"];
           console.log("chatContainer --> ", chatContainer.style.height);
-          var chatContainerHeight = chatContainer.style.height;
-          console.log("chatContainerHeight --> ", chatContainerHeight);
+          // var chatContainerHeight = chatContainer.style.height;
+          // var chatContainerHeight = chatContainer.offsetHeight;
+          // console.log("chatContainerHeight --> ", chatContainerHeight);
 
 
-          var splittedValue = chatContainerHeight.split("px")[0];
+          /* var splittedValue = chatContainerHeight.split("px")[0];
           console.log("splittedValue --> ", splittedValue);
 
           
           var splittedContainerHeight = Number(splittedValue);
-          console.log("splittedContainerHeight --> ", splittedContainerHeight);
+          console.log("splittedContainerHeight --> ", splittedContainerHeight); */
 
-          var heightDiff = splittedContainerHeight - 75;
+          var ignoreClickOnElement = chatContainer;
 
-          chatContainer.style.height = `${heightDiff}px`;
+          document.addEventListener('click', function(event) {
+              var isClickInsideElement = ignoreClickOnElement.contains(event.target);
+              if (!isClickInsideElement) {
+                var chatContainerHeight = chatContainer.getBoundingClientRect().height;
+                console.log("chatContainerHeight --> ", chatContainerHeight);
+                console.log("ashish sharma")
 
-          console.log("chatContainer  222 2 22 2 ", chatContainer.style.height, "px");
+                var heightDiff = splittedContainerHeight - 54;
+                console.log("heightDiff --> ", heightDiff);
 
-          console.log("innerDoc --> ", innerDoc)
-          var temp = innerDoc.body;
-          console.log("temp ----> ", temp);
+                chatContainer.style.height = `${heightDiff}px`;
 
-          updateIframeHeight(heightDiff);
+                console.log("chatContainer  testing purpose ", chatContainer.style.height, "px");
 
-          var promoCloseBtn = iframe.contentDocument.body.getElementsByClassName("promo-carousel-close-button")["close-promotion"];
-          console.log("promoCloseBtn ----> ", promoCloseBtn);
+                console.log("innerDoc --> ", innerDoc)
+                var temp = innerDoc.body;
+                console.log("temp ----> ", temp);
 
-          console.log("splittedContainerHeight ----> ", splittedContainerHeight);
-          var updatedHeight = splittedContainerHeight + 75;
+                updateIframeHeight(heightDiff);
+                  //Do something click is outside specified element
+              }
+          });
+
           
-          console.log("updatedHeight ----> ", updatedHeight);
-          promoCloseBtn.onclick = updateIframeHeight(updatedHeight);
+
+          // var promoCloseBtn = iframe.contentDocument.body.getElementsByClassName("promo-carousel-close-button")["close-promotion"];
+          // console.log("promoCloseBtn ----> ", promoCloseBtn);
+
+          // console.log("splittedContainerHeight ----> ", splittedContainerHeight);
+          // var updatedHeight = splittedContainerHeight + 75;
+          
+          // console.log("updatedHeight ----> ", updatedHeight);
+          // promoCloseBtn.onclick = updateIframeHeight(updatedHeight);
         }
       }
 
